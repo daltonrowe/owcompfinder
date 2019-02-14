@@ -1,0 +1,115 @@
+extends layout
+
+block content
+  block user-input
+    div(id='masthead')
+      h1 Overwatch Comp Finder
+        span beta
+      p This is a fan-made team finder project for #[a(class="play-overwatch" href='https://playoverwatch.com' target="_blank") Overwatch]. Contact at #[a(href='mailto:gaming@yellowberri.com' target="_blank") gaming@yellowberri.com]
+
+      div(id='faq')
+        div(class='one-half')
+          h4 How it Works
+          ol
+            li Enter your BattleTag and options
+            li Select the heros you want to search for
+            li Hit Search
+            li Send invites via Blizzard app
+
+        div(class='one-half')
+          h4 The Purpose
+          ol
+            li Find Players who want to play the Heroes your Group needs
+            li Make Looking for Groups easier: #[a(href='https://youtu.be/RofvPl1zIU8?t=965') It was Jeff's Idea]
+
+  block app-display
+    div(id='app-display')
+      div(id='stats')
+
+      block comp-search
+      div(id='comp-search')
+        form(method='POST' id='input-form' class='section-hide')
+          ul
+            li(class='panel panel-0')
+              block user-submit
+              section(id='user-input')
+                h2 Enter Your Info:
+
+                label(for='blizz_id') Blizzard BattleTag
+                input(type='text' id='blizz_id' name='blizz_id' placeholder='battletag#1337')
+
+                label(for='p0') I want to play
+                select(class='hero-select' id='p0' name='p0')
+                  each val, index in heroes
+                    option(value=index) #{val}
+
+                label(for='sr') Skill Rating (SR)
+                input(type='number' id='sr' name='sr' max='5000' value='2000')
+
+                label(for='region') Region
+                select(class='region-select' id='region' name='region')
+                  option(value='na-east' selected='selected') NA East
+                  option(value='na-west') NA West
+                  option(value='europe') Europe
+                  option(value='asia') Asia
+
+                div(class='checkbox')
+                  input(type='checkbox' name='list' id='list' checked=true)
+                  label(for='list') List me for invites
+
+                div(class='checkbox')
+                  input(type='checkbox' name='mic' id='mic')
+                  label(for='mic') I use Voice Chat
+
+                div(class='tags')
+                  label(for='tags') Require Tags ( Comma Separated )
+                  input(type='text' name='tags' id='tags' placeholder='Try: comp, 222, your-private-room')
+
+                button(type='submit' formaction='/create-player') Search
+
+                p(class='extra') All listings expire after 10 minutes. #[br] Matches are +/- 1000 SR in the same region
+
+            each val in [1, 2, 3, 4, 5]
+              li(class='panel panel-' + val)
+                div(class='hero-float')
+                  h3 Hero #{val + 1}:
+                  select(class='hero-select comp-select' name='p' + val)
+                      each val, index in heroes
+                        option(value=index) #{val}
+                      option(value='none' selected='selected') -
+                      option(value='offense') Offense
+                      option(value='defense') Defense
+                      option(value='tank') Tank
+                      option(value='support' selected=true) Support
+                ul.players-display
+
+block todo
+  div(class='one-half')
+    h3 To Do:
+    ul
+      h4 0.0.2
+      li Refresh one by one
+      li Copy username to clipboard
+      li List most requested / Most played heroes
+      h4 0.0.3
+      li PS4 / Xbox Support
+      li Restyle / Make pretty
+      li Responsive styles if needed
+      h4 0.1.0
+      li Refactor this mess
+      h4 0.1.1
+      li Extend with Discord bot
+      li #[a(href="https://www.npmjs.com/package/blizzard.js")]Automatically look up SR + Battletag
+
+  div(class='one-half')
+    span(class='version') Version 0.0.1
+    h3 History:
+    ul
+      h4 0.0.1
+      li Region select
+      li Scroll inside player list
+      li Search by role and hero within 1000 SR
+      li Filter results and listings by tags
+      li Show mic icon for voice chat
+      li Allow unlisted search
+      li Add offset for duplicate hero searches

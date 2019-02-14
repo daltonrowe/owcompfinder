@@ -1,0 +1,370 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	position:relative;
+	width:100vw;
+	overflow-x:hidden;
+	overflow-y:scroll;
+
+	font-size: 14px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	padding:0;
+	margin:0;
+	color:white;
+
+	box-sizing:border-box;
+
+	background-color: #001c2d;
+	background-image: url(../images/select-bg.jpg);
+	background-position: center center;
+	background-size: 100% auto;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+h2, h3 {
+	margin-top:0;
+}
+
+p {
+	font-size: .8em;
+	line-height: 1.6em;
+	margin:0;
+}
+
+hr {
+	display:block;
+	width:100%;
+	border:none;
+	border-top:1px solid rgba(255, 255, 255, 0.8);
+	height:0;
+	margin:0;
+	padding-bottom:12px;
+}
+
+a {
+	color: #00B7FF;
+}
+
+a.play-overwatch {
+	font-weight: bold;
+}
+
+h1 {
+	margin:0;
+	margin-bottom:10px;
+}
+
+h1 span {
+	font-size: 8px;
+	text-transform: UPPERCASE;
+	font: monospace;
+	margin-left:2px;
+}
+
+.one-half {
+	width:49%;
+	float:left;
+}
+
+.one-half + .one-half {
+	float:right;
+}
+
+#user-input label {
+	cursor:pointer;
+}
+
+.checkbox {
+	width:100%;
+	overflow: hidden;
+	margin-bottom:1em;
+}
+
+.checkbox input {
+	float:left;
+	width:25px;
+	height:20px;
+	margin:0;
+}
+
+.checkbox label {
+	width:70%;
+	float:left;
+	margin:0;
+}
+
+.clearfix {
+	overflow:hidden;
+}
+
+.section-hide {
+	overflow:hidden;
+}
+
+#masthead {
+	padding:1.5em 2em 1em 2em;
+	color:white;
+	width:100%;
+	background-color: rgba(255,255,255,0.3);
+	overflow:hidden;
+	border-bottom:4px solid white;
+}
+
+#site-footer {
+	width:100%;
+	padding:1.5em 2em 1em 2em;
+	overflow:hidden;
+}
+
+#app-display input[type=text],
+#app-display input[type=number],
+#app-display select,
+#app-display button {
+	width:100%;
+	padding:1em;
+	margin-bottom:1em;
+	border:none;
+	background-color: rgba(255,255,255,0.1);
+	border:1px solid rgba(255,255,255,0.4);
+	color:white;
+	transition:all .3s ease;
+	cursor:pointer;
+
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	appearance:none;
+}
+
+.extra {
+	font-size: 10px;
+	text-align: center;
+	margin-top:2em;
+	opacity:.7;
+}
+
+.version {
+	display:inline-block;
+	clear:both;
+	font-size: 18px;
+	opacity:.7;
+	border:1px solid white;
+	padding:1em;
+	margin-top:16px;
+	margin-bottom:16px;
+}
+
+#faq {
+	overflow:hidden;
+}
+
+#app-display button {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+#user-input input[type=text],
+#user-input input[type=number],
+#user-input select {
+	margin-bottom:1.5em;
+}
+
+#app-display input[type=text]:focus,
+#app-display input[type=number]:focus,
+#app-display select:focus {
+	border-color:white;
+	outline:none;
+	transform:scale(1.02);
+
+}
+
+#app-display select,
+#app-display select:focus {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+option {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+#app-display button {
+	font-size: 1.4em;
+	margin-bottom:0;
+}
+
+#user-input span.tag span {
+	float:right;
+}
+
+#user-input label {
+	display:block;
+	text-transform: UPPERCASE;
+	font-size: .8em;
+	font-weight: bold;
+	margin-bottom:.5em;
+}
+
+#user-input span {
+	display:block;
+	margin-bottom:.5em;
+	font-size: .8em;
+}
+
+#app-display {
+	position:relative;
+	width:100%;
+	height:70vh;
+	min-height:1300px;
+}
+
+#comp-search ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+#comp-search ul li.panel {
+	position:absolute;
+	top:0;
+	left:0;
+	display:block;
+	width:33.333%;
+	height:50%;
+	background-color: rgba(20,20,20,0.4);
+	border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+.hero-float {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	background-color: #191220;
+	padding:1em;
+	z-index: 99;
+}
+
+#comp-search ul li.panel.panel-0 {
+	padding:2em;
+	padding-bottom:0;
+	border-right:1px solid rgba(255,255,255,0.3);
+}
+
+#comp-search li.panel:nth-of-type(even) {
+	background-color: rgba(20,20,20,0.3);
+}
+
+#comp-search li.panel:nth-of-type(2) {
+	left:33.333%;
+	border-right:1px solid rgba(255,255,255,0.3);
+}
+
+#comp-search li.panel:nth-of-type(3) {
+	left:66.666%;
+}
+
+#comp-search li.panel:nth-of-type(4) {
+	top:50%;
+	border-right:1px solid rgba(255,255,255,0.3);
+}
+
+#comp-search li.panel:nth-of-type(5) {
+	top:50%;
+	left:33.333%;
+	border-right:1px solid rgba(255,255,255,0.3);
+}
+
+#comp-search li.panel:nth-of-type(6) {
+	top:50%;
+	left:66.666%;
+}
+
+#comp-search ul.players-display {
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+	padding:2em;
+	padding-top:130px;
+	overflow-y:scroll;
+}
+
+#comp-search ul.players-display li {
+	border:1px solid grey;
+	margin-bottom:.5em;
+	overflow:hidden;
+	background-color: rgba(255,255,255,0.1);
+	transition:all .3s ease;
+}
+
+ul.players-display li .info,
+ul.players-display li .tags,
+ul.players-display li .region {
+	padding:.5em;
+	overflow:hidden;
+}
+
+.mic-icon {
+	display:inline-block;
+	width:14px;
+	height:14px;
+	margin-bottom:-2px;
+	margin-left:8px;
+	opacity:.7;
+	user-select:none;
+
+	background-image: url(../images/mic-icon.png);
+	background-position: center center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+ul.players-display li:hover {
+	background-color: rgba(255,255,255,0.2);
+	transform:scale(1.05);
+}
+
+ul.players-display span {
+	display:block;
+}
+
+ul.players-display span.hero {
+	text-transform: UPPERCASE;
+	width:100%;
+	padding:.5em;
+	padding-bottom:.25em;
+	font-size:12px;
+	user-select:none;
+}
+
+ul.players-display span.blizz_id {
+	width:49%;
+	float:left;
+	padding:.5em;
+	padding-right:0;
+	font-weight: bold;
+}
+
+ul.players-display span.sr {
+	width:49%;
+	float:right;
+	padding:.5em;
+	padding-left:0;
+	text-align: right;
+	font-size:10px;
+	vertical-align: bottom;
+	user-select:none;
+}
+
+ul.players-display span.tags,
+ul.players-display span.region {
+	clear:both;
+	width:100%;
+	font-size: 10px;
+	padding-top:4px;
+	color:rgba(255, 255, 255, 0.55);
+	background-color: rgba(0,0,0,0.4);
+}

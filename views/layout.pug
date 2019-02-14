@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(id='app')
+      block content
+
+      footer(id='site-footer')
+        block todo
+
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js')
+    script(src='https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js')
+
+    script(src='/javascripts/owcomp.js')
+
+    //- Global site tag (gtag.js) - Google Analytics
+    script(src="https://www.googletagmanager.com/gtag/js?id=UA-109525204-2", async)
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109525204-2');
